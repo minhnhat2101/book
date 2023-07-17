@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>dfdsf</h1>
+
+    <table>
+        <tr>
+            <td>STT</td>
+            <td>Tên Sách</td>
+            <td>Tác giả</td>
+            <td>Giá</td>
+        </tr>
+        {% for s in sach %}
+        <tr>
+            <td>{{s.tenSach}}</td>
+            <td>{{s.gia}}</td>
+            <td>{{s.tacGia}}</td>
+            <td>{{s.gia}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>
