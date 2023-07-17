@@ -12,15 +12,15 @@ def danh_sach(request):
 
 
 def timsach(request):        
-    if request.method == 'GET': # this will be GET now      
-        ten_sach =  request.GET.get('ten') # do some research what it does       
-        status = Sach.objects.filter(tenSach__icontains=ten_sach) # filter returns a list so you might consider skip except part
+    if request.method == 'POST': # this will be GET now      
+        ten_sach =  request.POST.get('ten') # do some research what it does       
+        sach = Sach.objects.filter(tenSach__icontains=ten_sach) # filter returns a list so you might consider skip except part
         context = {
-        'sach':status
+            'sach':sach
          }
-        return render(request, "bookstore/index.html",status)
+        return render(request, "bookstore/index.html",context)
     else:
         context = {
         'sach':""
          }
-        return render(request,"search.html",{})
+        return render(request,"bookstore/index.html",context)
