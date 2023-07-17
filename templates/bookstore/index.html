@@ -7,20 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <form>
+        Tên sách <input type="text" name="ten" id="ten"> <button type="submit"  name="Tìm">Tìm sách</button> 
+    </form>
+    <br>
+    <br>
+    <table border="1px">
 
-    <table>
-        <tr>
-            <td>STT</td>
+        <tr >
+        
             <td>Tên Sách</td>
             <td>Tác giả</td>
             <td>Giá</td>
+            <td>Sửa</td>
+            <td>Xóa</td>
         </tr>
         {% for s in sach %}
         <tr>
             <td>{{s.tenSach}}</td>
-            <td>{{s.gia}}</td>
             <td>{{s.tacGia}}</td>
             <td>{{s.gia}}</td>
+            <td><a href="#">Sửa</a></td>
+            <td><a href="#">Xóa</a></td>
         </tr>
         {% endfor %}
     </table>
