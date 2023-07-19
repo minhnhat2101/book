@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Sach
 # Create your views here.
 
@@ -24,3 +24,19 @@ def timsach(request):
         'sach':""
          }
         return render(request,"bookstore/index.html",context)
+    
+def update_book(request,book_id):
+    book = get_object_or_404(Sach, id=book_id)
+    context = {'book':book}
+    return render(request,'bookstore/update.html',context)
+
+def update_process(request):
+    if request.method == 'POST':
+        id = request.POST.get('book_id')
+        tenSach = request.POST.get('tenSach')
+        gia = request.POST.get('gia')
+        tacGia = request.POST.get('tacGia')
+        Sach.objects.filter(id=id).update(tenSach= tenSach,gia= gia, tacGia= tacGia)
+        sach = Sach.objects.all()
+        context = {'sach': sach}
+    return render(request,"bookstore/index.html",context)

@@ -1,0 +1,39 @@
+<form action="{% url 'update_process' %}" method="post">
+  {% csrf_token %}
+  <div class="mb-3">
+    <input type="hidden" id="book_id" name="book_id" value="{{book.id}}">
+    <label for="exampleFormControlInput1" class="form-label">Ten Sach</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tenSach"
+      name="tenSach"
+      value= "{{book.tenSach}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >gia</label
+    >
+    <input
+      type="text"
+      class="form-control"
+      id="gia"
+      name="gia"
+      value="{{book.gia}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Tac Gia</label>
+    <input
+      type="text"
+      class="form-control"
+      id="tacGia"
+      name="tacGia"
+      value="{{book.tacGia}}"
+    />
+  </div>
+  <div class="mb-3" style="text-align: center">
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+  </div>
+</form>
