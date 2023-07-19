@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-qif=^(leaoz@infe+!-pkfa$=(w_a^lt#=(3=_nk*b=9=q4%h@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jimcoder.pythonanywhere.com']
 
 
 # Application definition
