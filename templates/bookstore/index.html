@@ -28,7 +28,7 @@
             <td>{{s.tenSach}}</td>
             <td>{{s.tacGia}}</td>
             <td>{{s.gia}}</td>
-            <td><a href="#">Sửa</a></td>
+            <td><a href="{% url 'update_book'% book.id}">Sửa</a></td>
             <td><a href="#">Xóa</a></td>
         </tr>
         {% endfor %}
